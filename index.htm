@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La discothèque de la classe</title>
+<style>
+:root{--bg:#f4f1ea;--surface:#fff;--ink:#1d1b19;--muted:#6b655c;--accent:#b4531f;--on-accent:#fff;--line:#e2dcce;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121214;--surface:#1c1c20;--ink:#f2efe8;--muted:#9a968c;--accent:#e8a33d;--on-accent:#17120a;--line:#2b2b31}}
+:root[data-theme="dark"]{--bg:#121214;--surface:#1c1c20;--ink:#f2efe8;--muted:#9a968c;--accent:#e8a33d;--on-accent:#17120a;--line:#2b2b31}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.5}
+main{max-width:960px;margin:0 auto;padding:48px 20px 64px}
+header{margin-bottom:40px}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,6vw,52px);line-height:1.1;margin:8px 0 12px;font-weight:700}
+header p{margin:0;color:var(--muted);max-width:56ch}
+section{margin-top:40px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:15px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;gap:16px;align-items:center}
+.disc{flex:none;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,var(--accent) 0 17%,#0c0c0d 18% 22%,transparent 23%),repeating-radial-gradient(circle,#18181a 0 2px,#0c0c0d 2px 4px);transition:transform .8s ease}
+.card:hover .disc{transform:rotate(180deg)}
+.t{font-weight:700;font-size:17px;line-height:1.25;margin:0}
+.a{color:var(--muted);font-size:14px;margin:2px 0 0}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.play{background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;padding:10px 18px;border-radius:999px;font-size:15px}
+.play:hover{filter:brightness(1.08)}
+.alt,.link{background:none;border:1px solid var(--line);color:var(--ink);text-decoration:none;font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;cursor:pointer}
+.alt:hover,.link:hover{border-color:var(--accent)}
+.edit{display:none;gap:8px;flex-wrap:wrap}
+.edit.open{display:flex}
+.edit input{flex:1 1 160px;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:14px}
+.pinned{font-size:12px;color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="kicker">Éducation musicale</div>
+<h1>La discothèque de la classe</h1>
+<p>Reprises, samples et citations : un clic sur « Écouter » pour lancer l’extrait.</p>
+</header>
+<div id="app"><section><h2>L’Habanera de Bizet réutilisée</h2><p class="sub">Trois morceaux qui s’appuient sur l’air de Carmen.</p><div class="grid"><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">Hardcore Habanera</p><p class="a">Scooter</p></div></div><span class="tag">Utilise l’Habanera de Bizet</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=Scooter%20Habanera">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/Scooter%20Habanera">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">Shut Up and Dance With Me</p><p class="a">The Gregory Brothers</p></div></div><span class="tag">Utilise l’Habanera de Bizet</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=The%20Gregory%20Brothers%20Shut%20Up%20and%20Dance%20With%20Me">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/The%20Gregory%20Brothers%20Shut%20Up%20and%20Dance%20With%20Me">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">Those Dogs</p><p class="a">En Vogue feat. Bobby McFerrin &amp; Eklypse</p></div></div><span class="tag">Utilise l’Habanera de Bizet</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=En%20Vogue%20Those%20Dogs%20Bobby%20McFerrin%20Eklypse">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/En%20Vogue%20Those%20Dogs%20Bobby%20McFerrin%20Eklypse">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article></div></section><section><h2>« You Know I’m No Good » d’Amy Winehouse</h2><p class="sub">Un sample et deux versions de la même chanson.</p><div class="grid"><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">vpn</p><p class="a">Lil Ugly Mane</p></div></div><span class="tag">Sample de la batterie</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=Lil%20Ugly%20Mane%20vpn">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/Lil%20Ugly%20Mane%20vpn">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">You Know I’m No Good</p><p class="a">Modern Merchant</p></div></div><span class="tag">Reprise</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=Modern%20Merchant%20You%20Know%20I%27m%20No%20Good">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/Modern%20Merchant%20You%20Know%20I'm%20No%20Good">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article><article class="card"><div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t">You Know I’m No Good</p><p class="a">Arctic Monkeys</p></div></div><span class="tag">Reprise</span><div class="row"><a class="play" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=Arctic%20Monkeys%20You%20Know%20I%27m%20No%20Good">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/search/Arctic%20Monkeys%20You%20Know%20I'm%20No%20Good">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden="">Extrait personnalisé</span></div><div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div></article></div></section></div>
+<footer>Les extraits s’ouvrent dans un nouvel onglet. Pour lancer l’extrait exact de votre choix, cliquez sur « Lien direct » et collez l’adresse de la vidéo ou du morceau : elle sera retenue sur cet appareil.</footer>
+</main>
+<script>
+var groups=[
+{title:"L’Habanera de Bizet réutilisée",sub:"Trois morceaux qui s’appuient sur l’air de Carmen.",tracks:[
+{id:"scooter",t:"Hardcore Habanera",a:"Scooter",tag:"Utilise l’Habanera de Bizet",q:"Scooter Habanera"},
+{id:"gregory",t:"Shut Up and Dance With Me",a:"The Gregory Brothers",tag:"Utilise l’Habanera de Bizet",q:"The Gregory Brothers Shut Up and Dance With Me"},
+{id:"dogs",t:"Those Dogs",a:"En Vogue feat. Bobby McFerrin & Eklypse",tag:"Utilise l’Habanera de Bizet",q:"En Vogue Those Dogs Bobby McFerrin Eklypse"}]},
+{title:"« You Know I’m No Good » d’Amy Winehouse",sub:"Un sample et deux versions de la même chanson.",tracks:[
+{id:"vpn",t:"vpn",a:"Lil Ugly Mane",tag:"Sample de la batterie",q:"Lil Ugly Mane vpn"},
+{id:"merchant",t:"You Know I’m No Good",a:"Modern Merchant",tag:"Reprise",q:"Modern Merchant You Know I'm No Good"},
+{id:"arctic",t:"You Know I’m No Good",a:"Arctic Monkeys",tag:"Reprise",q:"Arctic Monkeys You Know I'm No Good"}]}
+];
+function get(k){try{return localStorage.getItem("jukebox:"+k)||""}catch(e){return ""}}
+function set(k,v){try{if(v)localStorage.setItem("jukebox:"+k,v);else localStorage.removeItem("jukebox:"+k)}catch(e){}}
+function yt(q){return "https://www.youtube.com/results?search_query="+encodeURIComponent(q)}
+function sp(q){return "https://open.spotify.com/search/"+encodeURIComponent(q)}
+function card(x){
+var c=document.createElement("article");c.className="card";
+c.innerHTML='<div class="top"><div class="disc" aria-hidden="true"></div><div><p class="t"></p><p class="a"></p></div></div>'+
+'<span class="tag"></span>'+
+'<div class="row"><a class="play" target="_blank" rel="noopener noreferrer">▶ Écouter</a><a class="alt" target="_blank" rel="noopener noreferrer">Spotify</a><button class="link" type="button">Lien direct</button><span class="pinned" hidden>Extrait personnalisé</span></div>'+
+'<div class="edit"><input type="url" placeholder="https://…" aria-label="Lien direct"><button class="link save" type="button">Enregistrer</button><button class="link clear" type="button">Effacer</button></div>';
+c.querySelector(".t").textContent=x.t;c.querySelector(".a").textContent=x.a;c.querySelector(".tag").textContent=x.tag;
+var play=c.querySelector(".play"),alt=c.querySelector(".alt"),pin=c.querySelector(".pinned"),ed=c.querySelector(".edit"),inp=ed.querySelector("input");
+alt.href=sp(x.q);
+function refresh(){var u=get(x.id);play.href=u||yt(x.q);pin.hidden=!u;inp.value=u}
+refresh();
+c.querySelector(".row .link").onclick=function(){ed.classList.toggle("open");if(ed.classList.contains("open"))inp.focus()};
+ed.querySelector(".save").onclick=function(){var v=inp.value.trim();if(v&&v.indexOf("https://")!==0){inp.setCustomValidity("L’adresse doit commencer par https://");inp.reportValidity();return}inp.setCustomValidity("");set(x.id,v);refresh();ed.classList.remove("open")};
+ed.querySelector(".clear").onclick=function(){set(x.id,"");refresh();ed.classList.remove("open")};
+return c}
+var app=document.getElementById("app");
+groups.forEach(function(g){
+var s=document.createElement("section");
+s.innerHTML='<h2></h2><p class="sub"></p><div class="grid"></div>';
+s.querySelector("h2").textContent=g.title;s.querySelector(".sub").textContent=g.sub;
+g.tracks.forEach(function(x){s.querySelector(".grid").appendChild(card(x))});
+app.appendChild(s)});
+</script>
+
+
+</body></html>
